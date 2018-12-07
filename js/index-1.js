@@ -93,63 +93,86 @@ window.onload = function() {
   //   strokeColor : 'black',
   //   fillColor : 'grey'
   // }
-  var cart1 = new Path.Rectangle({
-    point: [70, 10],
-    size: [40, 30],
-    fillColor: 'grey'
-  })
-
-  var cart2 = new Path.Rectangle({
-    point: [185, 785],
-    size: [40, 30],
-    fillColor: 'grey'
-  })
-  // function onFrame(event) {
-  //   // // myCart.position += new Point(10, 0);
-  //   // myCart.position.add(new Point(10, 0));
-  //   // console.log(myCart.position);
-  //   path.rotate(3);
+  // var cart1 = new Path.Rectangle({
+  //   point: [70, 10],
+  //   size: [40, 30],
+  //   fillColor: 'grey'
+  // })
+  //
+  // var cart2 = new Path.Rectangle({
+  //   point: [185, 785],
+  //   size: [40, 30],
+  //   fillColor: 'grey'
+  // })
+  // // function onFrame(event) {
+  // //   // // myCart.position += new Point(10, 0);
+  // //   // myCart.position.add(new Point(10, 0));
+  // //   // console.log(myCart.position);
+  // //   path.rotate(3);
+  // // }
+  //
+  // var aisle1 = new Path.Rectangle({
+  //   point: [0, 0],
+  //   size: [30, 800],
+  //   fillColor: '#ff6666'
+  // })
+  // var aisle2 = new Path.Rectangle({
+  //   point: [35, 0],
+  //   size: [30, 800],
+  //   fillColor: '#ff6666'
+  // })
+  //
+  // var aisle3 = new Path.Rectangle({
+  //   point: [115, 0],
+  //   size: [30, 800],
+  //   fillColor: '#ff6666'
+  // })
+  // var aisle4 = new Path.Rectangle({
+  //   point: [150, 0],
+  //   size: [30, 800],
+  //   fillColor: '#ff6666'
+  // })
+  //
+  // var aisle5 = new Path.Rectangle({
+  //   point: [230, 0],
+  //   size: [30, 800],
+  //   fillColor: '#ff6666'
+  // })
+  // var aisle6 = new Path.Rectangle({
+  //   point: [265, 0],
+  //   size: [30, 800],
+  //   fillColor: '#ff6666'
+  // })
+  //
+  // view.onFrame = function(event) {
+  //   // cart.position.x += 1;
+  //   if(cart1.position.y < 785)
+  //     cart1.position.y += 1;
+  //   if(cart2.position.y > 15)
+  //     cart2.position.y -= 1;
   // }
 
-  var aisle1 = new Path.Rectangle({
-    point: [0, 0],
-    size: [30, 800],
-    fillColor: '#ff6666'
-  })
-  var aisle2 = new Path.Rectangle({
-    point: [35, 0],
-    size: [30, 800],
-    fillColor: '#ff6666'
-  })
+  // var myPath = new Path();
+  // myPath.strokeColor = "black";
+  //
+  // view.onMouseDown = function(event) {
+  //   myPath.add(event.point);
+  // }
 
-  var aisle3 = new Path.Rectangle({
-    point: [115, 0],
-    size: [30, 800],
-    fillColor: '#ff6666'
-  })
-  var aisle4 = new Path.Rectangle({
-    point: [150, 0],
-    size: [30, 800],
-    fillColor: '#ff6666'
-  })
+  var myPath;
 
-  var aisle5 = new Path.Rectangle({
-    point: [230, 0],
-    size: [30, 800],
-    fillColor: '#ff6666'
-  })
-  var aisle6 = new Path.Rectangle({
-    point: [265, 0],
-    size: [30, 800],
-    fillColor: '#ff6666'
-  })
+  view.onMouseDown = function(event) {
+    myPath = new Path();
+    myPath.strokeColor = 'black';
+    myPath.strokeWidth = 5;
+    // myPath.add(event.point);
+  }
 
-  view.onFrame = function(event) {
-    // cart.position.x += 1;
-    if(cart1.position.y < 785)
-      cart1.position.y += 1;
-    if(cart2.position.y > 15)
-      cart2.position.y -= 1;
+  // view.onMouseUp = function(event) {
+  //   myPath.add(event.point);
+  // }
+  view.onMouseDrag = function(event) {
+    myPath.add(event.point);
   }
 
 }
